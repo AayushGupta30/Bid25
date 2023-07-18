@@ -1,0 +1,29 @@
+#login {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 200px auto auto auto;
+}
+
+#loginName {
+    width: fit-content;
+    margin: 0px auto 10px auto;
+}
+
+#passLabel {
+    padding: 0px 44px 0px 0px;
+}
+
+#emailLabel {
+    padding: 0px 10px 0px 0px;
+}
+
+.groupForm {
+    display: flex;
+    padding: 10px;
+}
+
+#forms {
+    display: flex;
+    flex-direction: column;
+}
