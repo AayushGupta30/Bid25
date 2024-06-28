@@ -1,7 +1,7 @@
 import React from "react";
 export default function FormComponent(props) {
     const { element, formik } = props
-    if(element.Credits == 3)
+    if(element.Credits === 3 || element.Credits === 4)
     {
         return (
             <div id='subjDiv'>
