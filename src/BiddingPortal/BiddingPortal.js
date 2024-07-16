@@ -18,6 +18,7 @@ export default function BiddingPortal() {
     const [objID, setObjID] = useState(null);
     const [round, setRound] = useState(null)
     const [project, setProject] = useState(null);
+    const [totalBidPoints, setTotalBidPoints] = useState(0);
     useEffect(() => {
         (async () => {
             await axios.get(url, {
@@ -50,6 +51,14 @@ export default function BiddingPortal() {
                 error = new Error();
             });
     }, []);
+
+    const handleBidChange = (subjectCode, value) => {
+        const bidPoints = parseInt(value, 10) || 0;
+        const newValues = { ...formik.values, [subjectCode]: bidPoints };
+        const totalPoints = Object.values(newValues).reduce((acc, val) => acc + (parseInt(val, 10) || 0), 0);
+        setTotalBidPoints(totalPoints);
+    };
+    
     const formik = useFormik(
         {
             initialValues: {},
@@ -98,10 +107,10 @@ export default function BiddingPortal() {
         <div >
             <br></br>
             <h2>{name} - {rollNumber}</h2>
-            <h3>Points Left to Bid: <u>{points}</u></h3>
+            <h3>Points Left to Bid: <u>{points - totalBidPoints}</u></h3>
             <form onSubmit={formik.handleSubmit}>
                 <div id='subjForm'>{
-                    subjects.data.map(ele => <FormComponent key={ele.SubCode} element={ele} formik={formik} />)
+                    subjects.data.map(ele => <FormComponent key={ele.SubCode} element={ele} formik={formik} onBidChange={handleBidChange}/>)
                 }</div>
                 <br></br>
                 <div id='div-css'>
