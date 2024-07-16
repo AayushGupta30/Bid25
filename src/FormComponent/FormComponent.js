@@ -1,6 +1,12 @@
 import React from "react";
 export default function FormComponent(props) {
-    const { element, formik } = props
+    const { element, formik, onBidChange } = props
+
+    const handleInputChange = (e) => {
+        formik.handleChange(e);
+        onBidChange(element.SubCode, e.target.value);
+    };
+    
     if(element.Credits === 3 || element.Credits === 4)
     {
         return (
@@ -12,7 +18,7 @@ export default function FormComponent(props) {
                 <h6>Available Seats:{element.AvailableSeats}</h6>
                 <h6>Credits: {element.Credits}</h6>
                 <h6>Term: {element.Term}</h6>
-                <input type='number' onChange={formik.handleChange} name={element.SubCode} id={element.SubCode} placeholder="Enter Bid" required="true" min="0" />
+                <input type='number' onChange={handleInputChange} name={element.SubCode} id={element.SubCode} placeholder="Enter Bid" required="true" min="0" />
             </div>
         )
     }
@@ -27,7 +33,7 @@ export default function FormComponent(props) {
                 <h6>Available Seats:{element.AvailableSeats}</h6>
                 <h6>Credits: {element.Credits}</h6>
                 <h6>Term: 1/2 </h6>
-                <input type='number' onChange={formik.handleChange} name={element.SubCode} id={element.SubCode} placeholder="Enter Bid" required="true" min="0" />
+                <input type='number' onChange={handleInputChange} name={element.SubCode} id={element.SubCode} placeholder="Enter Bid" required="true" min="0" />
             </div>
         )
 
