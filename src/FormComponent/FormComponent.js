@@ -18,7 +18,7 @@ export default function FormComponent(props) {
                 <h6>Available Seats:{element.AvailableSeats}</h6>
                 <h6>Credits: {element.Credits}</h6>
                 <h6>Term: {element.Term}</h6>
-                <input type='number' onChange={handleInputChange} name={element.SubCode} id={element.SubCode} placeholder="Enter Bid" required="true" min="0" />
+                <input type='number' defaultValue={0} onChange={handleInputChange} name={element.SubCode} id={element.SubCode} placeholder="Enter Bid" required="true" min="0" />
             </div>
         )
     }
@@ -33,7 +33,7 @@ export default function FormComponent(props) {
                 <h6>Available Seats:{element.AvailableSeats}</h6>
                 <h6>Credits: {element.Credits}</h6>
                 <h6>Term: 1/2 </h6>
-                <input type='number' onChange={handleInputChange} name={element.SubCode} id={element.SubCode} placeholder="Enter Bid" required="true" min="0" />
+                <input type='number' defaultValue={0} onChange={handleInputChange} name={element.SubCode} id={element.SubCode} placeholder="Enter Bid" required="true" min="0" />
             </div>
         )
 
