@@ -37,13 +37,20 @@ export default function BiddingPortal() {
                 Authorization: `Bearer ${token}`,
             },
         }).then(res => {
-            const sortedSubjects = res.data.sort((a, b) => {
-                if (a.term === b.term) {
-                    return a.credits - b.credits; // Sort by credits if term is the same
-                }
-                return a.term.localeCompare(b.term); // Otherwise, sort by term
-            });
-            setSubjects(sortedSubjects);
+            // Ensure `res.data` contains `data` as an array before sorting
+            if (Array.isArray(res.data)) {
+                const sortedSubjects = res.data.sort((a, b) => {
+                    if (a.Term === b.Term) {
+                        return a.Credits - b.Credits; // Sort by Credits if Term is the same
+                    }
+                    return a.Term - b.Term; // Sort by Term
+                });
+                setSubjects({ data: sortedSubjects });
+            } else {
+                console.error("Unexpected response structure:", res.data);
+            }
+        }).catch(err => {
+            console.error("Error fetching subjects:", err);
             });
         })();
     }, []);
