@@ -38,7 +38,7 @@ export default function BiddingPortal() {
             },
         }).then(res => {
             // Ensure `res.data` contains `data` as an array before sorting
-            if (Array.isArray(res.data)) {
+            if (Array.isArray(res.data.data)) {
                 const sortedSubjects = res.data.data.sort((a, b) => {
                     if (a.Term === b.Term) {
                         return a.Credits - b.Credits; // Sort by Credits if Term is the same
