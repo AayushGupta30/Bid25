@@ -19,8 +19,8 @@ export default function Header() {
         <nav class="nav">
             <ul class="pt-5">
                 <li><a href="https://docs.google.com/presentation/d/19eTzYquJX_aI5gUHGtKcNUe6Fdh4NGAN/edit?usp=share_link&ouid=100525523692143994751&rtpof=true&sd=true" target="_blank">Rules</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/18C0n71RDvN4BpOpUrw2Ja_kEExoP59_reI5vPVb8-Hg/edit?usp=sharing" target="_blank">Subject Plan</a></li>
-                <li><a href="https://drive.google.com/file/d/1q9yW0o5cRQWhDWQg3D5SPYTGSrAf8D99/view?usp=sharing" target="_blank">Time Table</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1OZVgX3Q-jQgQJOWkF5IXzAgIxJhD5EIg/edit?usp=sharing&ouid=100525523692143994751&rtpof=true&sd=true" target="_blank">Subject Plan</a></li>
+                <li><a href="https://drive.google.com/file/d/15ek5rkMJXQHCX6ZKOVekfDavh8gr6WqT/view?usp=sharing" target="_blank">Time Table</a></li>
                 {token && <li> <button class='button-89' id='buttonLogout' type="submit" variant="danger" onClick={() => logout()}>
                     Logout
                 </button></li>}
