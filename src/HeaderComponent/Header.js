@@ -13,7 +13,7 @@ export default function Header() {
     }
     return (<div>
 
-        <h1>Bidding Process for Autumn Semester - SOM 25</h1>
+        <h1>Bidding Process for Spring Semester - SOM 25</h1>
         <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
         <label for="menu-icon"></label>
         <nav class="nav">
