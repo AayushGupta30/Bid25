@@ -19,7 +19,7 @@ export default function BiddingPortal() {
     const [round, setRound] = useState(null)
     const [project, setProject] = useState(null);
     const [totalBidPoints, setTotalBidPoints] = useState(0);
-    useEffect(() => {
+    /**useEffect(() => {
         (async () => {
             await axios.get(url, {
                 headers: {
@@ -29,7 +29,25 @@ export default function BiddingPortal() {
                 setSubjects(res.data);
             })
         })();
-    }, [])
+    }, [])**/
+    useEffect(() => {
+    (async () => {
+        await axios.get(url, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }).then(res => {
+            const sortedSubjects = res.data.sort((a, b) => {
+                if (a.term === b.term) {
+                    return a.credits - b.credits; // Sort by credits if term is the same
+                }
+                return a.term.localeCompare(b.term); // Otherwise, sort by term
+            });
+            setSubjects(sortedSubjects);
+            });
+        })();
+    }, []);
+
     useEffect(() => {
         const configuration = {
             method: "get",
