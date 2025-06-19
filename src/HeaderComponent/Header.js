@@ -13,14 +13,14 @@ export default function Header() {
     }
     return (<div>
 
-        <h1>Bidding Process for Spring Semester - SOM 25</h1>
+        <h1>Bidding Process for Autumn Semester - SOM 26</h1>
         <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
         <label for="menu-icon"></label>
         <nav class="nav">
             <ul class="pt-5">
-                <li><a href="https://docs.google.com/presentation/d/19eTzYquJX_aI5gUHGtKcNUe6Fdh4NGAN/edit?usp=share_link&ouid=100525523692143994751&rtpof=true&sd=true" target="_blank">Rules</a></li>
-                <li><a href="https://docs.google.com/spreadsheets/d/1OZVgX3Q-jQgQJOWkF5IXzAgIxJhD5EIg/edit?usp=sharing&ouid=100525523692143994751&rtpof=true&sd=true" target="_blank">Subject Plan</a></li>
-                <li><a href="https://drive.google.com/file/d/15ek5rkMJXQHCX6ZKOVekfDavh8gr6WqT/view?usp=sharing" target="_blank">Time Table</a></li>
+                <li><a href="https://docs.google.com/presentation/d/1GZ5BNpHBdVVXLm2KEqDlx9TKxIme12WJHdVywfoO-eE/edit?usp=sharing" target="_blank">Rules</a></li>
+                <li><a href="https://docs.google.com/spreadsheets/d/1UQlrn0pL_37SjQ2scE4z7WhE7ZkDfGzz-c8x7qZUyeY/edit?usp=sharing" target="_blank">Subject Plan</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1AoiCG0smQWVMx_E-JlokEju3tYJjJI2D?usp=drive_link" target="_blank">Time Table</a></li>
                 {token && <li> <button class='button-89' id='buttonLogout' type="submit" variant="danger" onClick={() => logout()}>
                     Logout
                 </button></li>}
